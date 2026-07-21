@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up - Voyago</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Navbar Logo Only -->
+
+<nav class="profile-nav">
+
+    <a href="index.html" class="logo">
+        <i class="fa-solid fa-plane-departure"></i>
+        <span>Voyago</span>
+    </a>
+
+    <button class="back-home-btn" id="backBtn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+</button>
+
+</nav>
+
+
+
+<!-- Signup Section -->
+
+<section class="signup-section">
+
+
+    <div class="signup-box">
+
+
+        <div class="signup-icon">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+        </div>
+
+
+
+        <h2>Create Account</h2>
+
+        <p>
+            Join Voyago and start planning your journeys
+        </p>
+
+
+
+        <form id="signupForm">
+
+
+            <div class="signup-input">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input 
+                type="text" 
+                id="name"
+                placeholder="Full Name"
+                required>
+
+            </div>
+
+
+
+            <div class="signup-input">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input 
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required>
+
+            </div>
+
+
+
+            <div class="signup-input">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <input 
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                required>
+
+            </div>
+
+
+
+            <div class="signup-input">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input 
+                type="password"
+                id="password"
+                placeholder="Password"
+                required>
+
+            </div>
+
+
+
+            <button type="submit" class="signup-submit">
+
+                Sign Up
+
+            </button>
+
+
+
+        </form>
+
+
+
+        <p class="signup-switch">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </p>
+
+
+
+    </div>
+
+
+</section>
+
+<script src="script.js"></script>
+<script>
+    const backBtn = document.getElementById("backBtn");
+
+if(backBtn){
+
+    backBtn.addEventListener("click",()=>{
+
+        if(history.length > 1){
+
+            history.back();
+
+        }else{
+
+            window.location.href = "index.html";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>

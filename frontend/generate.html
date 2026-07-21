@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Travel Planner | Voyago</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+
+<body class="generate-page">
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="header">
+
+    <nav class="navbar profile-nav">
+
+        <a href="index.html" class="logo">
+
+            <i class="fa-solid fa-plane-departure"></i>
+
+            <span>Voyago</span>
+
+        </a>
+
+        <button class="back-home-btn" id="backBtn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+</button>
+
+    </nav>
+
+</header>
+
+
+
+
+<!-- ================= MAIN ================= -->
+
+
+<section class="generate-container">
+
+
+    <div class="generate-title">
+
+        <h1>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            AI Travel Planner
+        </h1>
+
+
+        <p>
+            Create your personalized travel itinerary with Voyago AI
+        </p>
+
+
+    </div>
+
+
+
+    <!-- ================= PLANNER FORM ================= -->
+
+
+    <div class="planner-box">
+
+
+        <div class="input-group">
+
+            <label>
+                <i class="fa-solid fa-location-dot"></i>
+                Destination
+            </label>
+
+
+            <select id="destination">
+
+                <option value="">
+                    Select Destination
+                </option>
+
+                <option value="Goa">
+                    Goa
+                </option>
+
+                <option value="Manali">
+                    Manali
+                </option>
+
+                <option value="Jaipur">
+                    Jaipur
+                </option>
+
+                <option value="Kerala">
+                    Kerala
+                </option>
+
+                <option value="Dubai">
+                    Dubai
+                </option>
+
+                <option value="Paris">
+                    Paris
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+
+        <div class="input-group">
+
+
+            <label>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Duration
+
+            </label>
+
+
+            <select id="duration">
+
+
+                <option value="2 Days">
+                    2 Days
+                </option>
+
+
+                <option value="4 Days">
+                    4 Days
+                </option>
+
+
+                <option value="7 Days">
+                    7 Days
+                </option>
+
+
+                <option value="10 Days">
+                    10 Days
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+
+
+        <div class="input-group">
+
+
+            <label>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                Budget
+
+            </label>
+
+
+            <select id="budget">
+
+
+                <option value="₹10,000 - ₹20,000">
+                    ₹10,000 - ₹20,000
+                </option>
+
+
+                <option value="₹20,000 - ₹50,000">
+                    ₹20,000 - ₹50,000
+                </option>
+
+
+                <option value="₹50,000+">
+                    ₹50,000+
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+
+
+        <div class="input-group">
+
+
+            <label>
+
+                <i class="fa-solid fa-person-hiking"></i>
+
+                Travel Style
+
+            </label>
+
+
+            <select id="style">
+
+
+                <option value="Adventure">
+                    Adventure
+                </option>
+
+
+                <option value="Luxury">
+                    Luxury
+                </option>
+
+
+                <option value="Family">
+                    Family
+                </option>
+
+
+                <option value="Solo">
+                    Solo
+                </option>
+
+
+                <option value="Backpacking">
+                    Backpacking
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+
+
+        <div class="input-group">
+
+
+            <label>
+
+                <i class="fa-solid fa-cloud-sun"></i>
+
+                Season
+
+            </label>
+
+
+            <select id="season">
+
+
+                <option value="Summer">
+                    Summer
+                </option>
+
+
+                <option value="Winter">
+                    Winter
+                </option>
+
+
+                <option value="Monsoon">
+                    Monsoon
+                </option>
+
+
+                <option value="Spring">
+                    Spring
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+
+        <div class="input-group">
+
+
+            <label>
+
+                <i class="fa-solid fa-users"></i>
+
+                Travellers
+
+            </label>
+
+
+            <select id="travellers">
+
+
+                <option value="1">
+                    1 Person
+                </option>
+
+
+                <option value="2">
+                    2 People
+                </option>
+
+
+                <option value="4">
+                    4 People
+                </option>
+
+
+                <option value="6">
+                    6 People
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+        <button class="generate-btn" id="generateBtn">
+
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            Generate Trip
+
+
+        </button>
+
+
+
+    </div>
+
+    <!-- =========================
+        WEATHER SECTION
+========================= -->
+
+<div class="weather-box" id="weatherBox">
+
+
+    <h2>
+        <i class="fa-solid fa-cloud-sun"></i>
+        Weather Forecast
+    </h2>
+
+
+    <div class="weather-content">
+
+
+        <div>
+            <p class="weather-city" id="weatherCity">
+                Destination
+            </p>
+
+
+            <h1 id="temperature">
+                --°C
+            </h1>
+
+
+            <p id="weatherCondition">
+                Loading weather...
+            </p>
+
+        </div>
+
+
+
+
+        <div class="weather-details">
+
+
+            <p>
+                <i class="fa-solid fa-droplet"></i>
+                Humidity:
+                <span id="humidity">
+                    --
+                </span>
+            </p>
+
+
+
+            <p>
+                <i class="fa-solid fa-wind"></i>
+                Wind:
+                <span id="wind">
+                    --
+                </span>
+            </p>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+        <!-- ================= GENERATED ITINERARY ================= -->
+
+    <section class="itinerary-section" id="itinerarySection">
+
+
+        <div class="itinerary-header">
+
+
+            <h2>
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                Your Travel Plan
+
+            </h2>
+
+
+            <p>
+
+                Your personalized itinerary generated by Voyago AI
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- Trip Summary Card -->
+
+
+        <div class="trip-summary">
+
+
+            <div class="summary-item">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <span>Destination</span>
+
+                    <strong id="tripDestination">
+                        Goa
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="summary-item">
+
+                <i class="fa-solid fa-calendar"></i>
+
+                <div>
+
+                    <span>Duration</span>
+
+                    <strong id="tripDuration">
+                        4 Days
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="summary-item">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <div>
+
+                    <span>Budget</span>
+
+                    <strong id="tripBudget">
+                        ₹25,000
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="summary-item">
+
+                <i class="fa-solid fa-person-hiking"></i>
+
+                <div>
+
+                    <span>Style</span>
+
+                    <strong id="tripStyle">
+                        Adventure
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Day Wise Itinerary -->
+
+
+        <div class="day-plan">
+
+
+            <h3>
+
+                <i class="fa-solid fa-route"></i>
+
+                Day Wise Itinerary
+
+            </h3>
+
+
+
+            <div id="dayContainer">
+
+
+                <!-- Javascript will add days here -->
+
+
+                <div class="day-card">
+
+
+                    <h4>
+                        Day 1
+                    </h4>
+
+
+                    <ul>
+
+                        <li>
+                            Arrival and hotel check-in
+                        </li>
+
+                        <li>
+                            Explore local attractions
+                        </li>
+
+                        <li>
+                            Enjoy evening activities
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Action Buttons -->
+
+
+        <div class="trip-actions">
+
+
+            <button class="save-trip-btn" id="saveTripBtn">
+
+
+                <i class="fa-solid fa-heart"></i>
+
+                Save To Favorites
+
+
+            </button>
+
+
+
+
+
+            <button class="again-btn" id="againBtn">
+
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Generate Again
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+
+<script>
+
+// ===============================
+// ELEMENTS
+// ===============================
+
+const generateBtn = document.getElementById("generateBtn");
+
+const saveTripBtn = document.getElementById("saveTripBtn");
+
+const againBtn = document.getElementById("againBtn");
+
+
+
+let currentTrip = null;
+
+
+
+// ===============================
+// GENERATE TRIP
+// ===============================
+
+
+generateBtn.addEventListener("click", function(){
+
+
+    const destination =
+    document.getElementById("destination").value;
+
+
+    const duration =
+    document.getElementById("duration").value;
+
+
+    const budget =
+    document.getElementById("budget").value;
+
+
+    const style =
+    document.getElementById("style").value;
+
+
+    const season =
+    document.getElementById("season").value;
+
+
+    const travellers =
+    document.getElementById("travellers").value;
+
+
+
+    if(destination === ""){
+
+        alert("Please select a destination");
+        return;
+
+    }
+
+
+
+    currentTrip = {
+
+
+        id: Date.now(),
+
+        destination: destination,
+
+        days: duration,
+
+        budget: budget,
+
+        style: style,
+
+        season: season,
+
+        travellers: travellers,
+
+
+        itinerary: generateItinerary(destination,style)
+
+    };
+
+
+// ===============================
+// SAVE TO MY TRIPS HISTORY
+// ===============================
+const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (!currentUser) {
+    alert("Please login first.");
+    window.location.href = "login.html";
+    return;
+}
+
+const tripKey = `generatedTrips_${currentUser.email}`;
+
+let generatedTrips =
+JSON.parse(localStorage.getItem(tripKey)) || [];
+
+generatedTrips.push(currentTrip);
+
+localStorage.setItem(
+    tripKey,
+    JSON.stringify(generatedTrips)
+);
+
+displayTrip(currentTrip);
+
+// Update weather immediately
+getWeather(destination);
+
+
+});
+
+
+
+
+// ===============================
+// ITINERARY GENERATOR
+// ===============================
+
+
+function generateItinerary(destination,style){
+
+
+    return [
+
+        "Day 1 - Arrival at " + destination + " and explore nearby attractions",
+
+        "Day 2 - Enjoy famous places and local experiences",
+
+        "Day 3 - Adventure activities based on " + style + " travel style",
+
+        "Day 4 - Shopping, food exploration and departure"
+
+    ];
+
+
+}
+
+
+
+
+
+// ===============================
+// DISPLAY TRIP
+// ===============================
+
+
+function displayTrip(trip){
+
+
+    document.getElementById("tripDestination").textContent =
+    trip.destination;
+
+
+    document.getElementById("tripDuration").textContent =
+    trip.days;
+
+
+    document.getElementById("tripBudget").textContent =
+    trip.budget;
+
+
+    document.getElementById("tripStyle").textContent =
+    trip.style;
+
+
+
+    const container =
+    document.getElementById("dayContainer");
+
+
+    container.innerHTML = "";
+
+
+
+    trip.itinerary.forEach((day,index)=>{
+
+
+        const card = document.createElement("div");
+
+
+        card.className="day-card";
+
+
+        card.innerHTML = `
+
+            <h4>
+                Day ${index+1}
+            </h4>
+
+            <ul>
+
+                <li>
+                    ${day}
+                </li>
+
+            </ul>
+
+        `;
+
+
+        container.appendChild(card);
+
+
+
+    });
+
+
+
+    document.getElementById("itinerarySection")
+    .scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+
+
+}
+
+
+
+
+
+// ===============================
+// SAVE TO FAVORITES
+// ===============================
+// ===============================
+// SAVE TO FAVORITES
+// ===============================
+
+saveTripBtn.addEventListener("click", function () {
+
+    if (!currentTrip) {
+
+        alert("Generate a trip first!");
+        return;
+
+    }
+
+    const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (!currentUser) {
+
+        alert("Please login first.");
+        window.location.href = "login.html";
+        return;
+
+    }
+
+    const favoriteKey = `favorites_${currentUser.email}`;
+
+    let favorites =
+        JSON.parse(localStorage.getItem(favoriteKey)) || [];
+
+    const alreadySaved =
+        favorites.some(item =>
+            item.destination === currentTrip.destination &&
+            item.days === currentTrip.days
+        );
+
+    if (alreadySaved) {
+
+        alert("This trip is already saved!");
+        return;
+
+    }
+
+    favorites.push(currentTrip);
+
+    localStorage.setItem(
+        favoriteKey,
+        JSON.stringify(favorites)
+    );
+
+    alert("❤️ Trip saved to Favorites!");
+
+});
+
+// ===============================
+// GENERATE AGAIN
+// ===============================
+
+
+againBtn.addEventListener("click",function(){
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+
+});
+
+const backBtn = document.getElementById("backBtn");
+
+if(backBtn){
+
+    backBtn.addEventListener("click",()=>{
+
+        if(history.length > 1){
+
+            history.back();
+
+        }else{
+
+            window.location.href = "index.html";
+
+        }
+
+    });
+
+}
+
+
+</script>
+
+<script src="weather.js"></script>
+
+</body>
+
+</html>

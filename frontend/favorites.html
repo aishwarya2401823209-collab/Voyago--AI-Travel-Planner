@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Favourites | Voyago</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body class="fav-page">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="header">
+
+        <nav class="navbar profile-nav">
+
+            <a href="index.html" class="logo">
+
+                <i class="fa-solid fa-plane-departure"></i>
+                <span>Voyago</span>
+
+            </a>
+
+            <button class="back-home-btn" id="backBtn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+</button>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <section class="fav-container">
+
+        <div class="fav-title">
+
+            <h1>
+                <i class="fa-solid fa-heart"></i>
+                My Favourite Trips
+            </h1>
+
+            <p>
+                Save your favourite AI-generated travel plans and access them anytime.
+            </p>
+
+        </div>
+
+        <!-- Empty State -->
+
+        <div class="fav-empty" id="emptyState">
+
+            <i class="fa-solid fa-heart-circle-plus"></i>
+
+            <h2>No Favourite Trips Yet</h2>
+
+            <p>
+                Generate a travel itinerary and save it to your favourites.
+            </p>
+
+            <a href="generate.html" class="fav-btn">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate Trip
+
+            </a>
+
+        </div>
+
+        <!-- Favourite Cards -->
+
+        <div class="fav-grid" id="favGrid">
+
+            <!-- JavaScript will generate favourite trip cards here -->
+
+        </div>
+
+    </section>
+
+    <!-- ================= VIEW ITINERARY POPUP ================= -->
+
+    <div class="fav-modal" id="favModal">
+
+        <div class="fav-modal-box">
+
+            <span class="close-modal" onclick="closeModal()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </span>
+
+            <h2 id="modalDestination">
+
+                Destination
+
+            </h2>
+
+            <div class="modal-info">
+
+                <p>
+
+                    <strong>Duration :</strong>
+
+                    <span id="modalDays"></span>
+
+                </p>
+
+                <p>
+
+                    <strong>Budget :</strong>
+
+                    <span id="modalBudget"></span>
+
+                </p>
+
+                <p>
+
+                    <strong>Travel Style :</strong>
+
+                    <span id="modalStyle"></span>
+
+                </p>
+
+                <p>
+
+                    <strong>Best Season :</strong>
+
+                    <span id="modalSeason"></span>
+
+                </p>
+
+            </div>
+
+            <div class="itinerary">
+
+                <h3>
+
+                    Day-wise Itinerary
+
+                </h3>
+
+                <ul id="itineraryList">
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // ======================================
+// VOYAGO FAVORITES
+// ======================================
+
+
+// Get saved trips
+
+const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (!currentUser) {
+    window.location.href = "profile.html";
+}
+
+const favoriteKey = `favorites_${currentUser.email}`;
+
+let favorites =
+    JSON.parse(localStorage.getItem(favoriteKey)) || [];
+
+// Elements
+
+const favGrid = document.getElementById("favGrid");
+const emptyState = document.getElementById("emptyState");
+
+
+
+
+// ======================================
+// DISPLAY FAVORITES
+// ======================================
+
+function loadFavorites(){
+
+
+    favGrid.innerHTML = "";
+
+
+    if(favorites.length === 0){
+
+
+        emptyState.style.display = "flex";
+
+        favGrid.style.display = "none";
+
+        return;
+
+    }
+
+
+
+    emptyState.style.display = "none";
+
+    favGrid.style.display = "grid";
+
+
+
+
+    favorites.forEach((trip,index)=>{
+
+
+        const card = document.createElement("div");
+
+
+        card.className = "fav-card";
+
+
+
+        card.innerHTML = `
+
+
+            <h2>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                ${trip.destination}
+
+            </h2>
+
+
+
+            <div class="fav-details">
+
+
+                <p>
+                    <i class="fa-solid fa-calendar"></i>
+                    ${trip.days}
+                </p>
+
+
+                <p>
+                    <i class="fa-solid fa-wallet"></i>
+                    ${trip.budget}
+                </p>
+
+
+                <p>
+                    <i class="fa-solid fa-person-hiking"></i>
+                    ${trip.style}
+                </p>
+
+
+                <p>
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    ${trip.season}
+                </p>
+
+
+            </div>
+
+
+
+
+            <div class="fav-actions">
+
+
+                <button class="view-btn"
+                onclick="viewTrip(${index})">
+
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    View Plan
+
+
+                </button>
+
+
+
+
+                <button class="remove-btn"
+                onclick="removeTrip(${index})">
+
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Remove
+
+
+                </button>
+
+
+            </div>
+
+
+        `;
+
+
+
+        favGrid.appendChild(card);
+
+
+
+    });
+
+
+
+}
+
+
+
+
+// ======================================
+// VIEW TRIP POPUP
+// ======================================
+
+
+function viewTrip(index){
+
+
+    const trip = favorites[index];
+
+
+
+    document.getElementById("modalDestination").textContent =
+    trip.destination;
+
+
+
+    document.getElementById("modalDays").textContent =
+    trip.days;
+
+
+
+    document.getElementById("modalBudget").textContent =
+    trip.budget;
+
+
+
+    document.getElementById("modalStyle").textContent =
+    trip.style;
+
+
+
+    document.getElementById("modalSeason").textContent =
+    trip.season;
+
+
+
+
+    const list = document.getElementById("itineraryList");
+
+
+    list.innerHTML = "";
+
+
+
+    trip.itinerary.forEach(item=>{
+
+
+        let li = document.createElement("li");
+
+
+        li.innerHTML = `
+
+        <i class="fa-solid fa-check"></i>
+        ${item}
+
+        `;
+
+
+        list.appendChild(li);
+
+
+    });
+
+
+
+    document.getElementById("favModal")
+    .classList.add("active");
+
+
+
+}
+
+
+
+
+
+// ======================================
+// CLOSE POPUP
+// ======================================
+
+
+function closeModal(){
+
+
+    document.getElementById("favModal")
+    .classList.remove("active");
+
+
+}
+
+
+
+
+
+// ======================================
+// REMOVE TRIP
+// ======================================
+
+
+function removeTrip(index){
+
+
+    let confirmRemove =
+    confirm("Remove this trip from Favorites?");
+
+
+
+    if(!confirmRemove){
+
+        return;
+
+    }
+
+
+
+    favorites.splice(index,1);
+
+
+
+   localStorage.setItem(
+    favoriteKey,
+    JSON.stringify(favorites)
+);
+
+
+    loadFavorites();
+
+
+}
+
+
+
+
+
+// ======================================
+// CLOSE WHEN CLICK OUTSIDE
+// ======================================
+
+
+const modal = document.getElementById("favModal");
+
+
+if(modal){
+
+
+    modal.addEventListener("click",function(e){
+
+
+        if(e.target === modal){
+
+            closeModal();
+
+        }
+
+
+    });
+
+
+}
+
+
+
+
+
+// ======================================
+// START
+// ======================================
+
+
+loadFavorites();
+
+const backBtn = document.getElementById("backBtn");
+
+if(backBtn){
+
+    backBtn.addEventListener("click",()=>{
+
+        if(history.length > 1){
+
+            history.back();
+
+        }else{
+
+            window.location.href = "index.html";
+
+        }
+
+    });
+
+}
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyago| AI Travel Planner</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
+
+    <header class="header" id="header">
+
+        <nav class="navbar container">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane-departure"></i>
+                <span>Voyago</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="#home" class="active">Home</a></li>
+
+                <li><a href="#destinations">Destinations</a></li>
+
+                <li><a href="#features">Features</a></li>
+
+                <li><a href="#how-it-works">How It Works</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+           <a href="#" class="profile-link" id="profileBtn">
+    <i class="fa-solid fa-user"></i>
+    <span>Profile</span>
+</a>
+
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
+
+    <section class="hero" id="home">
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Hero Content -->
+
+        <div class="container hero-container">
+
+            <div class="hero-left">
+
+                <span class="hero-tag">
+                    ✈ AI Powered Smart Travel Planner
+                </span>
+
+                <h1>
+
+                    Plan Your Perfect
+                    <br>
+                    <span>Trip With AI</span>
+
+                </h1>
+
+                <p>
+
+                    Discover breathtaking destinations across the world and
+                    generate personalized travel itineraries within seconds.
+                    Travel smarter with intelligent recommendations, optimized
+                    budgets, live weather insights, and seamless planning.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="generate.html" class="btn primary-btn">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Generate Trip
+
+                    </a>
+
+                    <a href="#destinations" class="btn secondary-btn">
+
+                        Explore Destinations
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-right">
+
+                <!-- Floating Card -->
+
+                <div class="glass-card card-one">
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>20K+</h3>
+
+                        <p>Happy Travelers</p>
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card card-two">
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-earth-asia"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>150+</h3>
+
+                        <p>Destinations</p>
+
+                    </div>
+
+                </div>
+
+                <div class="glass-card card-three">
+
+                    <div class="icon">
+
+                        <i class="fa-solid fa-robot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>AI Powered</h3>
+
+                        <p>Personalized Planning</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Ocean Waves -->
+
+        <div class="hero-wave">
+
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+
+                <path d="M0,160
+                         C180,250
+                         320,70
+                         520,150
+                         C740,240
+                         930,60
+                         1180,160
+                         C1300,210
+                         1400,130
+                         1440,150
+                         L1440,320
+                         L0,320
+                         Z">
+                </path>
+
+            </svg>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+<!-- Popular Destinations -->
+<!-- ========================= -->
+
+<section class="destinations section" id="destinations">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Explore Beautiful Places
+            </span>
+
+            <h2>
+                Popular Destinations
+            </h2>
+
+            <p>
+                Discover handpicked destinations loved by travelers around the world.
+                From tropical beaches to snow-covered mountains, TravelAI helps you
+                find your next unforgettable adventure.
+            </p>
+
+        </div>
+
+        <div class="destination-grid">
+
+            <!-- Goa -->
+
+            <article class="destination-card reveal">
+
+                <div class="destination-image">
+
+                    <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=80"
+                        alt="Goa Beach">
+
+                    <div class="image-overlay">
+
+                        <span class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            4.9
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="destination-content">
+
+                    <div class="location">
+
+                        <h3>Goa</h3>
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            India
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Experience golden beaches, vibrant nightlife, Portuguese
+                        architecture, and breathtaking sunsets along India's most
+                        famous coastal paradise.
+                    </p>
+
+                    <div class="destination-footer">
+
+                        <div class="price">
+
+                            <small>Starting From</small>
+
+                            <h4>₹12,999</h4>
+
+                        </div>
+
+                        <a href="#" class="btn destination-btn">
+                            Book Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Bali -->
+
+            <article class="destination-card reveal">
+
+                <div class="destination-image">
+
+                    <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=80"
+                        alt="Bali">
+
+                    <div class="image-overlay">
+
+                        <span class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            4.8
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="destination-content">
+
+                    <div class="location">
+
+                        <h3>Bali</h3>
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Indonesia
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Relax in luxury resorts, explore lush rice terraces,
+                        ancient temples, waterfalls, and enjoy unforgettable
+                        tropical island experiences.
+                    </p>
+
+                    <div class="destination-footer">
+
+                        <div class="price">
+
+                            <small>Starting From</small>
+
+                            <h4>₹39,999</h4>
+
+                        </div>
+
+                        <a href="#" class="btn destination-btn">
+                            Book Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Maldives -->
+
+            <article class="destination-card reveal">
+
+                <div class="destination-image">
+
+                    <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=80"
+                        alt="Maldives">
+
+                    <div class="image-overlay">
+
+                        <span class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            5.0
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="destination-content">
+
+                    <div class="location">
+
+                        <h3>Maldives</h3>
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Indian Ocean
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Escape to crystal-clear lagoons, luxurious overwater villas,
+                        pristine white sand beaches, and unforgettable sunsets.
+                    </p>
+
+                    <div class="destination-footer">
+
+                        <div class="price">
+
+                            <small>Starting From</small>
+
+                            <h4>₹74,999</h4>
+
+                        </div>
+
+                        <a href="#" class="btn destination-btn">
+                            Book Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Manali -->
+
+            <article class="destination-card reveal">
+
+                <div class="destination-image">
+
+                    <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80"
+                        alt="Manali">
+
+                    <div class="image-overlay">
+
+                        <span class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            4.9
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="destination-content">
+
+                    <div class="location">
+
+                        <h3>Manali</h3>
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Himachal Pradesh
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Enjoy snow-covered mountains, scenic valleys, pine forests,
+                        adventure sports, and peaceful Himalayan landscapes.
+                    </p>
+
+                    <div class="destination-footer">
+
+                        <div class="price">
+
+                            <small>Starting From</small>
+
+                            <h4>₹18,499</h4>
+
+                        </div>
+
+                        <a href="#" class="btn destination-btn">
+                            Book Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <div class="section-header">
+        <h2>Smart Travel Features</h2>
+        <p>Everything you need to plan a perfect journey with AI assistance.</p>
+    </div>
+
+    <div class="features-container">
+
+        <div class="feature-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>AI Trip Planner</h3>
+            <p>
+                Get personalized travel plans created by AI based on your
+                destination, budget, interests, and travel style.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3>Smart Destination Guide</h3>
+            <p>
+                Discover hidden places, popular attractions, restaurants,
+                and activities recommended for you.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-wallet"></i>
+            <h3>Budget Optimization</h3>
+            <p>
+                Plan your trip efficiently with estimated expenses,
+                affordable stays, and money-saving suggestions.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-calendar-days"></i>
+            <h3>Custom Itinerary</h3>
+            <p>
+                Create a day-by-day schedule with activities arranged
+                according to your preferences.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-plane"></i>
+            <h3>Flight & Hotel Suggestions</h3>
+            <p>
+                Find suitable travel options with recommendations for
+                flights, hotels, and stays.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-language"></i>
+            <h3>Travel Assistant</h3>
+            <p>
+                Get instant answers, travel tips, and guidance anytime
+                during your journey.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- How It Works Section -->
+<section class="how-it-works" id="how-it-works">
+
+    <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Plan your dream trip in just a few simple steps.</p>
+    </div>
+
+    <div class="steps-container">
+
+        <div class="step-card">
+            <div class="step-number">01</div>
+            <i class="fa-solid fa-user"></i>
+            <h3>Enter Your Preferences</h3>
+            <p>
+                Tell us your destination, budget, interests,
+                travel dates, and preferred experience.
+            </p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">02</div>
+            <i class="fa-solid fa-brain"></i>
+            <h3>AI Creates Your Plan</h3>
+            <p>
+                Our AI analyzes your choices and generates a
+                personalized travel itinerary.
+            </p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">03</div>
+            <i class="fa-solid fa-map"></i>
+            <h3>Explore Your Journey</h3>
+            <p>
+                Follow your customized plan and enjoy a smooth,
+                memorable travel experience.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROFILE SIDEBAR ================= -->
+
+<div class="profile-sidebar" id="profileSidebar">
+
+    <div class="sidebar-top">
+
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="user-icon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <h2 id="sidebarUserName">User</h2>
+
+        <p id="sidebarUserEmail">user@email.com</p>
+
+    </div>
+
+
+    <ul>
+
+        <li>
+            <a href="myprofile.html">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="favorites.html">
+                <i class="fa-solid fa-heart"></i>
+                <span>My Favourite</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="trips.html">
+                <i class="fa-solid fa-suitcase"></i>
+                <span>My Trips</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+
+    </ul>
+
+    <button class="logout-btn" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </button>
+
+</div>
+
+    <script src="script.js"></script>
+    
+    <footer class="footer" id="contact">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2>
+                <i class="fa-solid fa-plane-departure"></i> Voyago
+            </h2>
+            <p>
+                Your AI-powered travel planner that helps you discover,
+                plan, and experience unforgettable journeys.
+            </p>
+        </div>
+
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                support@voyago.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                India
+            </p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        <p>© 2026 Voyago. All rights reserved.</p>
+    </div>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Voyago</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body class="mp-page">
+
+    <!-- Navbar -->
+
+    <header class="header">
+
+        <nav class="navbar profile-nav">
+
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-plane-departure"></i>
+                <span>Voyago</span>
+            </a>
+
+            <button class="back-home-btn" id="backBtn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+</button>
+
+        </nav>
+
+    </header>
+
+    <div class="mp-container">
+
+        <!-- Profile Card -->
+
+        <div class="mp-profile-card">
+
+            <div class="mp-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="mp-info">
+
+                <h1 id="name">Loading...</h1>
+
+                <p>
+                    <i class="fa-solid fa-user"></i>
+                    <span id="username">@username</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span id="email">email@gmail.com</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <span id="phone">9876543210</span>
+                </p>
+
+                <span class="mp-badge">
+                    Premium Traveller
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Details -->
+
+        <div class="mp-grid">
+
+            <div class="mp-box">
+
+                <h2>Personal Information</h2>
+
+                <div class="mp-detail">
+                    <span>Full Name</span>
+                    <strong id="fullname"></strong>
+                </div>
+
+                <div class="mp-detail">
+                    <span>Email</span>
+                    <strong id="email2"></strong>
+                </div>
+
+                <div class="mp-detail">
+                    <span>Phone Number</span>
+                    <strong id="phone2"></strong>
+                </div>
+
+                <div class="mp-detail">
+                    <span>Date Joined</span>
+                    <strong id="joined"></strong>
+                </div>
+
+            </div>
+
+            <div class="mp-box">
+
+                <h2>Travel Information</h2>
+
+                <div class="mp-detail">
+                    <span>Favourite Destination</span>
+                    <strong id="destination">Not Added</strong>
+                </div>
+
+                <div class="mp-detail">
+                    <span>Preferred Budget</span>
+                    <strong id="budget">₹20,000 - ₹50,000</strong>
+                </div>
+
+                <div class="mp-detail">
+                    <span>Travel Style</span>
+                    <strong id="style">Adventure</strong>
+                </div>
+
+                <div class="mp-detail">
+                    <span>Account Status</span>
+                    <strong>Active</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Stats -->
+
+        <div class="mp-stats">
+
+            <div class="mp-stat">
+                <i class="fa-solid fa-route"></i>
+                <h2 id="tripCount">0</h2>
+                <p>Trips Generated</p>
+            </div>
+
+            <div class="mp-stat">
+                <i class="fa-solid fa-heart"></i>
+                <h2 id="favCount">0</h2>
+                <p>Favourite Places</p>
+            </div>
+
+            <div class="mp-stat">
+                <i class="fa-solid fa-bookmark"></i>
+                <h2 id="saveCount">0</h2>
+                <p>Saved Plans</p>
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="mp-buttons">
+
+            <button class="mp-btn mp-edit" onclick="editProfile()">
+                <i class="fa-solid fa-pen"></i>
+                Edit Profile
+            </button>
+
+            <button class="mp-btn mp-logout" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+    <!-- ==========================
+     EDIT PROFILE POPUP
+========================== -->
+
+<div class="edit-popup" id="editPopup">
+
+    <div class="edit-box">
+
+        <h2>Edit Profile</h2>
+
+        <label>Full Name</label>
+        <input type="text" id="editName">
+
+        <label>Email</label>
+        <input type="email" id="editEmail">
+
+        <label>Phone Number</label>
+        <input type="text" id="editPhone">
+
+        <label>Favourite Destination</label>
+<input type="text" id="editDestination">
+
+<label>Preferred Budget</label>
+<select id="editBudget">
+    <option value="₹5,000 - ₹20,000">₹5,000 - ₹20,000</option>
+    <option value="₹20,000 - ₹50,000">₹20,000 - ₹50,000</option>
+    <option value="₹50,000+">₹50,000+</option>
+</select>
+
+<label>Travel Style</label>
+<select id="editStyle">
+    <option value="Adventure">Adventure</option>
+    <option value="Family">Family</option>
+    <option value="Luxury">Luxury</option>
+    <option value="Solo">Solo</option>
+    <option value="Honeymoon">Honeymoon</option>
+    <option value="Backpacking">Backpacking</option>
+</select>
+
+        <div class="edit-buttons">
+
+            <button class="save-btn" onclick="saveProfile()">
+                Save Changes
+            </button>
+
+            <button class="cancel-btn" onclick="closeEditPopup()">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <script>
+
+// ======================================
+// MY PROFILE
+// ======================================
+
+// Check if user is logged in
+const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (!user) {
+    alert("Please login first.");
+    window.location.href = "login.html";
+} else {
+
+    // ===========================
+    // PROFILE DETAILS
+    // ===========================
+
+    document.getElementById("name").textContent = user.name || "User";
+
+    document.getElementById("fullname").textContent = user.name || "-";
+
+    document.getElementById("username").textContent =
+        "@" + (user.name || "user")
+        .toLowerCase()
+        .replace(/\s+/g, "");
+
+    document.getElementById("email").textContent = user.email || "-";
+    document.getElementById("email2").textContent = user.email || "-";
+
+    document.getElementById("phone").textContent = user.phone || "-";
+    document.getElementById("phone2").textContent = user.phone || "-";
+
+    document.getElementById("joined").textContent = "Recently";
+
+    // ===========================
+    // STATS
+    // ===========================
+
+   const generatedTrips =
+JSON.parse(
+localStorage.getItem(`generatedTrips_${user.email}`)
+) || [];
+
+    document.getElementById("tripCount").textContent =
+        generatedTrips.length;
+
+   const favorites =
+JSON.parse(
+localStorage.getItem(`favorites_${user.email}`)
+) || [];
+
+    document.getElementById("favCount").textContent =
+        favorites.length;
+
+   const savedPlans = favorites;
+
+    document.getElementById("saveCount").textContent =
+        savedPlans.length;
+
+}
+
+// ======================================
+// LOGOUT
+// ======================================
+
+function logout() {
+
+localStorage.removeItem("loggedInUser");
+
+    alert("Logged out successfully!");
+
+    window.location.href = "index.html";
+
+}
+function editProfile() {
+
+    document.getElementById("editName").value = user.name || "";
+    document.getElementById("editEmail").value = user.email || "";
+    document.getElementById("editPhone").value = user.phone || "";
+    document.getElementById("editDestination").value = user.destination || "";
+document.getElementById("editBudget").value = user.budget || "₹20,000 - ₹50,000";
+document.getElementById("editStyle").value = user.style || "Adventure";
+
+    document.getElementById("editPopup").classList.add("active");
+
+}
+function closeEditPopup() {
+
+    document.getElementById("editPopup").classList.remove("active");
+
+}
+
+function saveProfile() {
+
+    user.name = document.getElementById("editName").value.trim();
+    user.email = document.getElementById("editEmail").value.trim();
+    user.phone = document.getElementById("editPhone").value.trim();
+    user.destination = document.getElementById("editDestination").value;
+user.budget = document.getElementById("editBudget").value;
+user.style = document.getElementById("editStyle").value;
+
+localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+    document.getElementById("name").textContent = user.name;
+    document.getElementById("fullname").textContent = user.name;
+    document.getElementById("username").textContent =
+        "@" + user.name.toLowerCase().replace(/\s+/g, "");
+
+    document.getElementById("email").textContent = user.email;
+    document.getElementById("email2").textContent = user.email;
+
+    document.getElementById("phone").textContent = user.phone;
+    document.getElementById("phone2").textContent = user.phone;
+    
+    document.getElementById("destination").textContent =
+    user.destination || "Not Added";
+
+document.getElementById("budget").textContent = user.budget;
+
+document.getElementById("style").textContent = user.style;
+
+    closeEditPopup();
+
+    alert("Profile updated successfully!");
+
+}
+
+const backBtn = document.getElementById("backBtn");
+
+if(backBtn){
+
+    backBtn.addEventListener("click",()=>{
+
+        if(history.length > 1){
+
+            history.back();
+
+        }else{
+
+            window.location.href = "index.html";
+
+        }
+
+    });
+
+}
+
+</script>
+</body>
+</html>

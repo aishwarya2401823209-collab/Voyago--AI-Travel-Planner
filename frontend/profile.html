@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Voyago</title>
+
+    <!-- Same CSS as index -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Profile page CSS -->
+    <link rel="stylesheet" href="profile.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR SAME AS INDEX -->
+    <nav class="navbar profile-nav">
+
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-plane-departure"></i>
+            <span>Voyago</span>
+        </a>
+
+        <button class="back-home-btn" id="backBtn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+</button>
+
+    </nav>
+
+
+    <!-- PROFILE LOGIN SECTION -->
+
+    <section class="profile-container">
+
+        <div class="login-card">
+
+            <div class="login-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <h2>Welcome to Voyago</h2>
+
+            <p>
+                Sign in to save your trips, manage your profile
+                and access personalized travel plans.
+            </p>
+
+<a href="login.html" class="login-btn">
+    <i class="fa-solid fa-right-to-bracket"></i>
+    Login
+</a>
+
+<a href="signup.html" class="signup-btn">
+    <i class="fa-solid fa-user-plus"></i>
+    Create Account
+</a>
+
+        </div>
+
+    </section>
+
+<script>
+    const backBtn = document.getElementById("backBtn");
+
+if(backBtn){
+
+    backBtn.addEventListener("click",()=>{
+
+        if(history.length > 1){
+
+            history.back();
+
+        }else{
+
+            window.location.href = "index.html";
+
+        }
+
+    });
+
+}
+
+</script>
+</body>
+
+</html>

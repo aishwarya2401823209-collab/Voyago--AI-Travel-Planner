@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Trips | Voyago</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+
+
+<body class="mytrip-page">
+
+
+
+<!-- ================= NAVBAR ================= -->
+
+
+<header class="header">
+
+
+    <nav class="navbar profile-nav">
+
+
+        <a href="index.html" class="logo">
+
+            <i class="fa-solid fa-plane-departure"></i>
+
+            <span>Voyago</span>
+
+        </a>
+
+        <button class="back-home-btn" id="backBtn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+</button>
+
+    </nav>
+
+
+</header>
+
+
+
+
+
+
+
+<!-- ================= MAIN ================= -->
+
+
+<section class="mytrip-container">
+
+
+
+
+
+    <!-- TITLE -->
+
+
+    <div class="mytrip-title">
+
+
+        <h1>
+
+            <i class="fa-solid fa-suitcase-rolling"></i>
+
+            My Trips
+
+        </h1>
+
+
+        <p>
+
+            Your generated AI travel plans are saved here.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- EMPTY MESSAGE -->
+
+
+    <div class="trip-empty" id="tripEmpty">
+
+
+        <i class="fa-solid fa-plane-circle-xmark"></i>
+
+
+        <h2>
+
+            No Trips Yet
+
+        </h2>
+
+
+        <p>
+
+            Generate your first travel plan with Voyago AI.
+
+        </p>
+
+
+
+        <a href="generate.html" class="trip-btn">
+
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            Generate Trip
+
+
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- TRIP CARDS -->
+
+
+    <div class="mytrip-grid" id="myTripGrid">
+
+
+        <!-- Javascript will add trips here -->
+
+
+    </div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= VIEW TRIP MODAL ================= -->
+
+
+<div class="trip-modal" id="tripModal">
+
+
+
+    <div class="trip-modal-box">
+
+
+
+        <button class="close-trip" onclick="closeTripModal()">
+
+
+            <i class="fa-solid fa-xmark"></i>
+
+
+        </button>
+
+
+
+
+
+        <h2 id="tripName">
+
+            Destination
+
+        </h2>
+
+
+
+
+
+
+        <div class="trip-info" id="tripInfo">
+
+
+            <!-- Trip details -->
+
+
+        </div>
+
+
+
+
+
+        <h3>
+
+            <i class="fa-solid fa-route"></i>
+
+            Itinerary
+
+        </h3>
+
+
+
+
+        <ul id="tripDays">
+
+
+            <!-- Days added by JS -->
+
+
+        </ul>
+
+
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+<script>
+const backBtn = document.getElementById("backBtn");
+
+if(backBtn){
+
+    backBtn.addEventListener("click",()=>{
+
+        if(history.length > 1){
+
+            history.back();
+
+        }else{
+
+            window.location.href = "index.html";
+
+        }
+
+    });
+
+}
+</script>
+
+
+</body>
+
+</html>

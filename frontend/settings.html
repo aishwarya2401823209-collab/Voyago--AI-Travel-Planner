@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings | Voyago</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+
+<body class="settings-page">
+
+
+<!-- NAVBAR -->
+
+<header class="header">
+
+<nav class="navbar profile-nav">
+
+
+<a href="index.html" class="logo">
+
+<i class="fa-solid fa-plane-departure"></i>
+
+<span>Voyago</span>
+
+</a>
+
+<button class="back-home-btn" id="backBtn">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+</button>
+
+</nav>
+
+</header>
+
+
+
+
+<!-- SETTINGS -->
+
+<section class="settings-container">
+
+
+
+<div class="settings-title">
+
+<h1>
+<i class="fa-solid fa-gear"></i>
+Settings
+</h1>
+
+<p>
+Manage your Voyago experience
+</p>
+
+</div>
+
+
+
+
+
+
+<div class="settings-grid">
+
+
+
+<!-- Notifications -->
+
+<div class="settings-card">
+
+
+<h2>
+<i class="fa-solid fa-bell"></i>
+Notifications
+</h2>
+
+
+<div class="settings-row">
+
+<span>
+Trip reminders
+</span>
+
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+</div>
+
+
+
+<div class="settings-row">
+
+<span>
+AI travel suggestions
+</span>
+
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+</div>
+
+
+
+<div class="settings-row">
+
+<span>
+Updates & announcements
+</span>
+
+
+<label class="toggle">
+
+<input type="checkbox">
+
+<span></span>
+
+</label>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- AI Preferences -->
+
+<div class="settings-card">
+
+
+<h2>
+<i class="fa-solid fa-robot"></i>
+AI Planner Preferences
+</h2>
+
+
+
+<div class="settings-row">
+
+<span>
+Include hotels
+</span>
+
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+</div>
+
+
+
+
+<div class="settings-row">
+
+<span>
+Include food recommendations
+</span>
+
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+</div>
+
+
+
+
+<div class="settings-row">
+
+<span>
+Include activities
+</span>
+
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Appearance -->
+
+<div class="settings-card">
+
+
+<h2>
+<i class="fa-solid fa-palette"></i>
+Appearance
+</h2>
+
+
+
+<div class="settings-row">
+
+<span>
+Dark Mode
+</span>
+
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span></span>
+
+</label>
+
+
+</div>
+
+
+
+<div class="settings-row">
+
+<span>
+Language
+</span>
+
+
+<select>
+
+<option>English</option>
+
+<option>Hindi</option>
+
+<option>Marathi</option>
+
+</select>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Data Management -->
+
+<div class="settings-card">
+
+
+<h2>
+<i class="fa-solid fa-database"></i>
+Data Management
+</h2>
+
+
+
+<button class="setting-action">
+<i class="fa-solid fa-trash"></i>
+Clear Saved Trips
+</button>
+
+
+
+<button class="setting-action">
+<i class="fa-solid fa-heart-crack"></i>
+Clear Favorites
+</button>
+
+
+
+<button class="setting-action">
+<i class="fa-solid fa-download"></i>
+Download Travel Data
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Help -->
+
+<div class="settings-card">
+
+
+<h2>
+<i class="fa-solid fa-circle-question"></i>
+Help & Support
+</h2>
+
+
+
+<a href="#" class="support-link">
+
+<i class="fa-solid fa-circle-info"></i>
+About Voyago
+
+</a>
+
+
+
+<a href="#" class="support-link">
+
+<i class="fa-solid fa-headset"></i>
+Contact Support
+
+</a>
+
+
+
+<a href="#" class="support-link">
+
+<i class="fa-solid fa-shield"></i>
+Privacy Policy
+
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+<script>
+    // =====================================
+// VOYAGO SETTINGS JAVASCRIPT
+// =====================================
+
+
+// Get all toggle switches
+
+const toggles = document.querySelectorAll(".toggle input");
+
+
+
+// Load saved settings
+
+let savedSettings = JSON.parse(
+    localStorage.getItem("voyagoSettings")
+) || {};
+
+
+
+toggles.forEach((toggle, index) => {
+
+
+    // restore previous values
+
+    if(savedSettings[index] !== undefined){
+
+        toggle.checked = savedSettings[index];
+
+    }
+
+
+
+    // save when changed
+
+    toggle.addEventListener("change", function(){
+
+
+        savedSettings[index] = this.checked;
+
+
+        localStorage.setItem(
+            "voyagoSettings",
+            JSON.stringify(savedSettings)
+        );
+
+
+    });
+
+
+});
+
+
+
+
+
+// =====================================
+// LANGUAGE SAVE
+// =====================================
+
+
+const languageSelect = document.querySelector(
+    ".settings-row select"
+);
+
+
+if(languageSelect){
+
+
+    let savedLanguage =
+    localStorage.getItem("voyagoLanguage");
+
+
+    if(savedLanguage){
+
+        languageSelect.value = savedLanguage;
+
+    }
+
+
+
+    languageSelect.addEventListener(
+        "change",
+        function(){
+
+
+            localStorage.setItem(
+                "voyagoLanguage",
+                this.value
+            );
+
+
+        }
+    );
+
+}
+
+
+
+
+
+
+
+// =====================================
+// CLEAR SAVED TRIPS
+// =====================================
+
+
+const clearTripsBtn =
+document.querySelectorAll(".setting-action")[0];
+
+
+if(clearTripsBtn){
+
+
+    clearTripsBtn.addEventListener(
+        "click",
+        function(){
+
+
+            localStorage.removeItem("myTrips");
+
+
+            alert(
+                "Saved trips cleared successfully!"
+            );
+
+
+        }
+    );
+
+}
+
+
+
+
+
+
+
+// =====================================
+// CLEAR FAVORITES
+// =====================================
+
+
+const clearFavBtn =
+document.querySelectorAll(".setting-action")[1];
+
+
+
+if(clearFavBtn){
+
+
+    clearFavBtn.addEventListener(
+        "click",
+        function(){
+
+
+            localStorage.removeItem("favorites");
+
+
+            alert(
+                "Favorites cleared successfully!"
+            );
+
+
+        }
+    );
+
+}
+
+
+
+
+
+
+
+
+// =====================================
+// DOWNLOAD USER DATA
+// =====================================
+
+
+const downloadBtn =
+document.querySelectorAll(".setting-action")[2];
+
+
+
+if(downloadBtn){
+
+
+    downloadBtn.addEventListener(
+        "click",
+        function(){
+
+
+            const data = {
+
+
+                profile:
+                JSON.parse(
+                    localStorage.getItem("loggedInUser")
+                ),
+
+
+
+                trips:
+                JSON.parse(
+                    localStorage.getItem("myTrips")
+                ) || [],
+
+
+
+                favorites:
+                JSON.parse(
+                    localStorage.getItem("favorites")
+                ) || [],
+
+
+
+                settings:
+                JSON.parse(
+                    localStorage.getItem("voyagoSettings")
+                ) || {}
+
+            };
+
+
+
+
+            const file = new Blob(
+                [
+                    JSON.stringify(
+                        data,
+                        null,
+                        2
+                    )
+                ],
+                {
+                    type:"application/json"
+                }
+            );
+
+
+
+            const link =
+            document.createElement("a");
+
+
+            link.href =
+            URL.createObjectURL(file);
+
+
+            link.download =
+            "voyago-data.json";
+
+
+            link.click();
+
+
+        }
+    );
+
+}
+
+const backBtn = document.getElementById("backBtn");
+
+if(backBtn){
+
+    backBtn.addEventListener("click",()=>{
+
+        if(history.length > 1){
+
+            history.back();
+
+        }else{
+
+            window.location.href = "index.html";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>
