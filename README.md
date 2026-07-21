@@ -122,7 +122,7 @@ Login
  
 Profile
 
-<img width="1339" height="637" alt="image" src="https://github.com/user-attachments/assets/751c1fa7-baf2-4c18-9391-7ecd5c1e9b8a" />
+<img width="1346" height="637" alt="image" src="https://github.com/user-attachments/assets/cd5ed76c-e499-48fb-b891-1e250d702cd6" />
 
 Favourite
 
